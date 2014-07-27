@@ -140,7 +140,7 @@ $(document).ready(function() {
   $("#input").on("keyup", function () {
     var input = $("#input").val().slice(-1);
     playSound( $(".bird[data-key="+input+"]") );
-    //$("#input").val(""); // clean up field!
+    $("#input").val(""); // clean up field!
   });
 }); 
 
