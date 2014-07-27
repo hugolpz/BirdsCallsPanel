@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Concise Handlebars.js</title>
+    <!-- 0a. CSS -->
+    <link rel='stylesheet' href='./css/bootstrap.min.css'><!-- main.css -->
+    <link rel="stylesheet" href="style.css">
+ 
+    <!-- 0a. JS -->
+    <!-- <script src="//code.jquery.com/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script><!-- online handlebars.js-->
+    <script src="js/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
+    <script src="js/handlebars.min.js"></script>
+    <script rel='script' src='./js/howler.js'></script>
+    <!-- Twiter CSS -->
+    <!-- howler or html5 audio -->
+  </head>
+  <style>
+  </style>
+ 
+  <body>
+    <!--1. Data (json format!) -->
+    <script>
+    var url='data.json'; // relative url : 'data.json'; protocole-relative absolute url: '//website.org/path/to/data.json';
+    var jsonData = { "item":
+    [
+      {"key": "1", "name":"Asian_barred_owlet"},
+      {"key": "2", "name":"Black-headed_ibis"},
+      {"key": "3", "name":"Black-hooded_oriole"},
+      {"key": "4", "name":"Black-rumped_flameback"},
+      {"key": "5", "name":"Black-tailed_Crake"},
+      {"key": "6", "name":"Blue-throated_barbet"},
+      {"key": "7", "name":"Common_green_magpie"},
+      {"key": "8", "name":"Common_kingfisher"},
+      {"key": "9", "name":"Common_merganser"},
+      {"key": "q", "name":"Crested_kingfisher"},
+      {"key": "w", "name":"Crested_serpent_eagle"},
+      {"key": "e", "name":"Cuckoo_Drongo"},
+      {"key": "r", "name":"Great_Cormorant"},
+      {"key": "t", "name":"Great_Slaty_woodpecker"},
+      {"key": "y", "name":"Grey_wagtail"},
+      {"key": "u", "name":"Himalayan_bulbul"},
+      {"key": "i", "name":"Ibisbill"},
+      {"key": "o", "name":"Kalij_pheasant"},
+      {"key": "p", "name":"Lesser_adjutant"},
+      {"key": "a", "name":"Long-tailed_minivet"},
+      {"key": "s", "name":"Myna_Hill"},
+      {"key": "d", "name":"Oriental_Darter"},
+      {"key": "f", "name":"Oriental_White_Ibis"},
+      {"key": "g", "name":"PartridgeH_WhiteCheeked_39s"},
+      {"key": "h", "name":"Pheasant_Peacock_26s42s"},
+      {"key": "j", "name":"PiedKingfisher"},
+      {"key": "k", "name":"Plumbeous_water_redstart"},
+      {"key": "l", "name":"Red-breasted_parakeet"},
+      {"key": "z", "name":"Red_junglefowl"},
+      {"key": "x", "name":"Red-wattled_lapwing"},
+      {"key": "c", "name":"River_lapwing"},
+      {"key": "v", "name":"River_tern"},
+      {"key": "b", "name":"Ruby-cheeked_sunbird"},
+      {"key": "n", "name":"Slaty-backed_Forktail"},
+      {"key": "m", "name":"Spangled_drongo"},
+      {"key": "-", "name":"Spider-hunter_Streaked"},
+      {"key": "=", "name":"Spotted_dove"},
+      {"key": "[", "name":"Wedge-tailed_green_pigeon"},
+      {"key": "]", "name":"White-cheeked_partridge"},
+      {"key": "\\", "name":"white_throated_kingfisher"}
+    ]
+};
+
+    </script>
+<div>
+  <form>
+    <fieldset>
+      <label for="target">Put mouse's </label>
+      <input id="input" placeholder=" cursor here !" type="text">
+    </fieldset>
+  </form>
+</div>
+<div>
+  1. Put cursor into form field.<br />
+  2. It's ready to work !<br />
+  3. Test the <b>Interactive Bird Voices Panel</b> (IBVP) by pressing a touch with your hand
+</div>
+ 
+    <!-- 2. Anchor -->
+    <div id="anchor">This div is the <b>#anchor</b>.<br /></div>
+ 
+    <!-- 3. Template -->
+    <script id="tpl" type="text/template">
+        {{#item}}
+            <button class="tpl bird sound" data-key="{{key}}" data-name="{{name}}">
+              <img src="img/lambda.jpg"><br />
+              <a href="audio/{{name}}.mp3">{{key}}</a> — {{name}}.
+              <audio src="./audio/{{name}}.mp3"></audio>
+            </button>
+        {{/item}}
+    </script>
+ 
+    <!--4. Handlebars.js slingshot -->
+    <script>
+    //4a.function creation
+    var slingshot = function (data, tplId, anchor) {
+     //$.getJSON(url, function(data) {
+              var template = $(tplId).html();
+              var stone = Handlebars.compile(template)(data);
+              $(anchor).append(stone);
+    // });
+  }
+    //4b.function firing
+    slingshot(jsonData, '#tpl', '#anchor'); // since url = 'data.json' , we can use both notations. 
+    </script>
+
+
+<!--4. Handlebars.js slingshot -->
+    <script>
+
+// 5a. INTERACTIONS
+var playSound = function ($this) {
+                                                    console.log("♪+1");// edited
+  // get phonetic properties
+    var pho = $this.attr("data-name");
+    var key = $this.attr("data-key");
+  $this.addClass("playing");
+  // playing
+  var sound = new Howl({
+     //                                               console.log("♪+2");// edited
+      urls: ['./audio/'+pho+'.mp3'],
+      onend: function() { $this.removeClass("playing"); }
+  }).play();
+  console.log("♪+; pho: "+pho+"; name: "+ key);// edited
+}; // end
+
+
+$(document).ready(function() {
+  $(".sound").click(function(){ 
+    playSound( $(this) );
+  });
+
+  $("#input").on("keyup", function () {
+    var input = $("#input").val().slice(-1);
+    playSound( $(".bird[data-key="+input+"]") );
+    //$("#input").val(""); // clean up field!
+  });
+}); 
+
+
+    </script>
+  </body>
+</html>

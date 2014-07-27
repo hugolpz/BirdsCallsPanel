@@ -1,0 +1,31 @@
+a {
+ color: #0084b4;
+ text-decoration:none;
+}
+a:hover { text-decoration : underline; }
+div#anchor { width: 80%; float: center;
+  padding: 1.6em; 
+  border: 0em solid #ddd;}
+div#anchor:hover { 
+  padding: 1.2em; /* padding + border = 1.6em */
+  border: 0.4em solid #ddd;
+}
+button.bird {
+  display: inline-block; /**/
+  overflow: hidden;
+/*height: 200px; */
+  width: 15%;
+  margin: 3px;
+  padding: 1.5em; /* padding + border = 1.6em */
+  border: 0.1em solid #ddd;
+  border-radius: 0.4em;
+  text-decoration: none;
+  background: #fff;
+  color: #333;
+}
+button.bird:hover { 
+  padding: 1.2em; /* padding + border = 1.6em */
+  border: 0.4em solid #0084b4;
+}
+img { width: 90%;}
+
