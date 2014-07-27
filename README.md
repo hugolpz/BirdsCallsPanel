@@ -5,6 +5,8 @@ The *Interactive Panel for Indian Birds Voices* is a governement supported, real
 
 The hardware is made as below.
 
+![IBIP](https://raw.githubusercontent.com/hugolpz/BirdsCallsPanel/master/System_p1.png)
+![IBIP](https://raw.githubusercontent.com/hugolpz/BirdsCallsPanel/master/System_p3.png)
 
 ### Software settings
 
