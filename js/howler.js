@@ -1,5 +1,5 @@
 /*!
- *  howler.js v1.1.24
+ *  howler.js v1.1.25
  *  howlerjs.com
  *
  *  (c) 2013-2014, James Simpson of GoldFire Studios
@@ -52,6 +52,7 @@
     this._volume = 1;
     this._muted = false;
     this.usingWebAudio = usingWebAudio;
+    this.ctx = ctx;
     this.noAudio = noAudio;
     this._howls = [];
     this._codecs = codecs;
@@ -344,9 +345,6 @@
         newNode._pos = 0;
         newNode.preload = 'auto';
         newNode.volume = (Howler._muted) ? 0 : self._volume * Howler.volume();
-
-        // add this sound to the cache
-        cache[url] = self;
 
         // setup the event listener to start playing the sound
         // as soon as it has buffered enough
@@ -1242,6 +1240,7 @@
             obj._webAudio = false;
             obj._audioNode = [];
             delete obj._gainNode;
+            delete cache[url];
             obj.load();
           }
         };

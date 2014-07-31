@@ -23,54 +23,55 @@
     <!--1. Data (json format!) -->
     <script>
     var url='data.json'; // relative url : 'data.json'; protocole-relative absolute url: '//website.org/path/to/data.json';
-    var jsonData = {"item": [{ "latin":"Glaucidium cuculoides", "name":"Asian_barred_owlet", "key":"1", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Eurystomus orientalis", "name":"Asian_dollarbird", "key":"", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Irena puella", "name":"Asian_fairy_bluebird", "key":"", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Threskiornis melanocephalus", "name":"Black-headed_ibis", "key":"2", "ecosystem":"River"},
-{ "latin":"Oriolus xanthornus", "name":"Black-hooded_oriole", "key":"3", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Dinopium benghalense", "name":"Black-rumped_flameback", "key":"4", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Amauornis bicolour", "name":"Black-tailed_crake", "key":"5", "ecosystem":"River"},
-{ "latin":"Limosa limosa", "name":"Black-tailed_godwit", "key":"", "ecosystem":"River"},
-{ "latin":"Megalaima asiatica", "name":"Blue-throated_barbet", "key":"6", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Cissa chinensis", "name":"Common_green_magpie", "key":"7", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Alcedo althis", "name":"Common_kingfisher", "key":"8", "ecosystem":"River"},
-{ "latin":"Mergus merganser", "name":"Common_merganser", "key":"9", "ecosystem":"River"},
-{ "latin":"Ceryle lugubris", "name":"Crested_kingfisher", "key":"0", "ecosystem":"River"},
-{ "latin":"Spilornis cheela", "name":"Crested_serpent_eagle", "key":"-", "ecosystem":"Sky"},
-{ "latin":"Surniculus lugubris", "name":"Cuckoo_drongo", "key":"q", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Phalacrocorax carbo", "name":"Great_cormorant", "key":"w", "ecosystem":"River"},
-{ "latin":"Mulleripicus pulverulentus", "name":"Great_slaty_woodpecker", "key":"e", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Polyplectron bicalcaratum", "name":"Grey_peacock-pheasant", "key":"r", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Motacilla cinerea", "name":"Grey_wagtail", "key":"t", "ecosystem":"River"},
-{ "latin":"Gracula religiosa", "name":"Myna_hill", "key":"a", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Pycnonotus leucogenys", "name":"Himalayan_bulbul", "key":"y", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Ibidorhyncha struthersii", "name":"Ibisbill", "key":"u", "ecosystem":"River"},
-{ "latin":"Lophura leucomelana lathami", "name":"Kalij_pheasant", "key":"i", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Leptoptilos javanicus", "name":"Lesser_adjutant", "key":"o", "ecosystem":"River"},
-{ "latin":"Pericrocotus ethologus", "name":"Long-tailed_minivet", "key":"p", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Anhinga melanogaster", "name":"Oriental_darter", "key":"s", "ecosystem":"River"},
-{ "latin":"Streptopelia orientalis", "name":"Oriental_turtle_dove", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Haliaeetus leucoryphus", "name":"Pallas", "key":"", "ecosystem":"Sky"},
-{ "latin":"Ceryle rudis", "name":"Pied_kingfisher", "key":"d", "ecosystem":"River"},
-{ "latin":"Rhyacornis fuliginosa", "name":"Plumbeous_water_redstart", "key":"f", "ecosystem":"River"},
-{ "latin":"Gallus gallus", "name":"Red_junglefowl", "key":"h", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Psittacula alexandri", "name":"Red-breasted_parakeet", "key":"g", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Vanellus indicus", "name":"Red-wattled_lapwing", "key":"j", "ecosystem":"River"},
-{ "latin":"Vanellus duvaucelii", "name":"River_lapwing", "key":"k", "ecosystem":"River"},
-{ "latin":"Sterna aurantia", "name":"River_tern_bhadra", "key":"l", "ecosystem":"River"},
-{ "latin":"Anthreptes singalensis", "name":"Ruby-cheeked_sunbird", "key":"z", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Leiothrix argentauris", "name":"Silver-eared_mesia", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Enicurus schistaceus", "name":"Slaty-backed_forktail", "key":"x", "ecosystem":"River"},
-{ "latin":"Dicrurus bracteatus", "name":"Spangled_drongo", "key":"c", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Streptopelia chinensis", "name":"Spotted_dove", "key":"v", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Arachnothera magna", "name":"Streaked_spiderhunter", "key":"b", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Treron sphenurus", "name":"Wedge-tailed_green_pigeon", "key":"n", "ecosystem":"Mid-storey_or_capony"},
-{ "latin":"Arborophiila atrogularis", "name":"White-cheeked_partridge", "key":"m", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Garrulax leucolophus", "name":"White-crested_laughingthrush", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
-{ "latin":"Gyps bengalensis", "name":"", "key":"", "ecosystem":"Sky"},
-{ "latin":"Halcyon smyrnensis", "name":"White-throated_kingfisher", "key":"", "ecosystem":"River"},
-{ "latin":"Carina scutulata", "name":"", "key":"", "ecosystem":"River"},
-{ "latin":"", "name":"White-naped_vulture", "key":"", "ecosystem":"Sky"}
+    var jsonData = {"item": [
+    { "latin":"Glaucidium cuculoides", "name":"Asian_barred_owlet", "key":"1", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Eurystomus orientalis", "name":"Asian_dollarbird", "key":"", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Irena puella", "name":"Asian_fairy_bluebird", "key":"", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Threskiornis melanocephalus", "name":"Black-headed_ibis", "key":"2", "ecosystem":"River"},
+    { "latin":"Oriolus xanthornus", "name":"Black-hooded_oriole", "key":"3", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Dinopium benghalense", "name":"Black-rumped_flameback", "key":"4", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Amauornis bicolour", "name":"Black-tailed_crake", "key":"5", "ecosystem":"River"},
+    { "latin":"Limosa limosa", "name":"Black-tailed_godwit", "key":"", "ecosystem":"River"},
+    { "latin":"Megalaima asiatica", "name":"Blue-throated_barbet", "key":"6", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Cissa chinensis", "name":"Common_green_magpie", "key":"7", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Alcedo althis", "name":"Common_kingfisher", "key":"8", "ecosystem":"River"},
+    { "latin":"Mergus merganser", "name":"Common_merganser", "key":"9", "ecosystem":"River"},
+    { "latin":"Ceryle lugubris", "name":"Crested_kingfisher", "key":"0", "ecosystem":"River"},
+    { "latin":"Spilornis cheela", "name":"Crested_serpent_eagle", "key":"-", "ecosystem":"Sky"},
+    { "latin":"Surniculus lugubris", "name":"Cuckoo_drongo", "key":"q", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Phalacrocorax carbo", "name":"Great_cormorant", "key":"w", "ecosystem":"River"},
+    { "latin":"Mulleripicus pulverulentus", "name":"Great_slaty_woodpecker", "key":"e", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Polyplectron bicalcaratum", "name":"Grey_peacock-pheasant", "key":"r", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Motacilla cinerea", "name":"Grey_wagtail", "key":"t", "ecosystem":"River"},
+    { "latin":"Gracula religiosa", "name":"Myna_hill", "key":"a", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Pycnonotus leucogenys", "name":"Himalayan_bulbul", "key":"y", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Ibidorhyncha struthersii", "name":"Ibisbill", "key":"u", "ecosystem":"River"},
+    { "latin":"Lophura leucomelana lathami", "name":"Kalij_pheasant", "key":"i", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Leptoptilos javanicus", "name":"Lesser_adjutant", "key":"o", "ecosystem":"River"},
+    { "latin":"Pericrocotus ethologus", "name":"Long-tailed_minivet", "key":"p", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Anhinga melanogaster", "name":"Oriental_darter", "key":"s", "ecosystem":"River"},
+    { "latin":"Streptopelia orientalis", "name":"Oriental_turtle_dove", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Haliaeetus leucoryphus", "name":"Pallas", "key":"", "ecosystem":"Sky"},
+    { "latin":"Ceryle rudis", "name":"Pied_kingfisher", "key":"d", "ecosystem":"River"},
+    { "latin":"Rhyacornis fuliginosa", "name":"Plumbeous_water_redstart", "key":"f", "ecosystem":"River"},
+    { "latin":"Gallus gallus", "name":"Red_junglefowl", "key":"h", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Psittacula alexandri", "name":"Red-breasted_parakeet", "key":"g", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Vanellus indicus", "name":"Red-wattled_lapwing", "key":"j", "ecosystem":"River"},
+    { "latin":"Vanellus duvaucelii", "name":"River_lapwing", "key":"k", "ecosystem":"River"},
+    { "latin":"Sterna aurantia", "name":"River_tern_bhadra", "key":"l", "ecosystem":"River"},
+    { "latin":"Anthreptes singalensis", "name":"Ruby-cheeked_sunbird", "key":"z", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Leiothrix argentauris", "name":"Silver-eared_mesia", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Enicurus schistaceus", "name":"Slaty-backed_forktail", "key":"x", "ecosystem":"River"},
+    { "latin":"Dicrurus bracteatus", "name":"Spangled_drongo", "key":"c", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Streptopelia chinensis", "name":"Spotted_dove", "key":"v", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Arachnothera magna", "name":"Streaked_spiderhunter", "key":"b", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Treron sphenurus", "name":"Wedge-tailed_green_pigeon", "key":"n", "ecosystem":"Mid-storey_or_capony"},
+    { "latin":"Arborophiila atrogularis", "name":"White-cheeked_partridge", "key":"m", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Garrulax leucolophus", "name":"White-crested_laughingthrush", "key":"", "ecosystem":"Ground_dwelling_or_understorey"},
+    { "latin":"Gyps bengalensis", "name":"", "key":"", "ecosystem":"Sky"},
+    { "latin":"Halcyon smyrnensis", "name":"White-throated_kingfisher", "key":"", "ecosystem":"River"},
+    { "latin":"Carina scutulata", "name":"", "key":"", "ecosystem":"River"},
+    { "latin":"", "name":"White-naped_vulture", "key":"", "ecosystem":"Sky"}
 ]};
 
     </script>
@@ -102,7 +103,7 @@
                   {{#if key}} <a href="./audio/{{name}}.mp3">{{key}}</a> — {{/if}}
                   {{name}}
                   {{#if latin}} (<a href="http://en.wikipedia.org/wiki/{{latin}}">{{latin}}</a>){{/if}}.
-              <audio src="./audio/{{name}}.mp3"></audio>
+              <audio src="./audio/{{name}}.mp3" controls autoplaysNOO loop preload="auto" ></audio>
             </button>
         {{/item}}
     </script>
@@ -123,8 +124,7 @@
 
 
 <!--4. Handlebars.js slingshot -->
-    <script>
-
+<script id="interactive_player">
 // 5a. INTERACTIONS
 var playSound = function ($this) {
                                                     console.log("♪+1");// edited
@@ -152,9 +152,44 @@ $(document).ready(function() {
     playSound( $(".bird[data-key="+input+"]") );
     $("#input").val(""); // clean up field!
   });
-}); 
+});
+</script>
+
+<script id="playlist_player">
+window.onload = function(e, loop) {
+    var onPlay = [false],
+      pCount = 0;
+      // startURL = "", // url de ton slide qui commencera par http://
+      playlistUrls = [
+        "./audio/cmn-ni3.mp3",
+        "./audio/cmn-hao3.mp3",
+        "./audio/cmn-lao3.mp3",
+        "./audio/cmn-mao3.mp3"
+        ], // liste de tes sons
+      howlerBank = [],
+      loop = true;
+      
+    var onEnd = function(e) {
+      if (loop === true ) { pCount = (pCount + 1 !== howlerBank.length)? pCount + 1 : 0; }
+      else { pCount = pCount + 1; }
+      howlerBank[pCount].play();
+    };
+      
+    playlistUrls.forEach(function(current, i) {   
+      howlerBank.push(new Howl({ urls: [playlistUrls[i]], onend: onEnd, buffer: true }))
+    });
+
+    // On défini un callback :
+    //var initiatePlaylist = function(e) {
+    //  if (!onPlay[0]) {
+       // onPlay[0] = true;
+        howlerBank[0].play();
+   //   }
+   // };
 
 
+// initiatePlaylist();
+}
     </script>
   </body>
 </html>
