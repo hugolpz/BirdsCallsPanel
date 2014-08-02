@@ -106,8 +106,9 @@
             <button class="tpl bird sound {{ecosystem}} col-md-2 col-xs-4" data-key="{{key}}" data-name="{{name}}" data-iucn="{{iucn}}" style='background-image:url("./img/photo/{{name}}.jpg");background-size: 100% 100%;'>
               <!-- <img src="img/photo/{{name}}.jpg" /><br /> -->
                   {{#if key}} <a href="./audio/{{name}}.mp3">{{key}}</a> — {{/if}}
-                    {{name}}
+                  {{name}}
                   {{#if latin}} (<a href="http://en.wikipedia.org/wiki/{{latin}}">{{latin}}</a>){{/if}}.
+                  <img src="img/iucn/Status_iucn3.1_{{iucn}}.png" width="240px" />
               <audio src="./audio/{{name}}.mp3" controlsNO autoplaysNO loop preload="auto" ></audio>
             </button>
         {{/item}}
