@@ -20,7 +20,8 @@
   </style>
  
   <body>
-    <!--1. Data (json format!) -->
+    <!-- ###################### -->
+    <!-- 1. Data (json format!) -->
     <script>
     var url='data.json'; // relative url : 'data.json'; protocole-relative absolute url: '//website.org/path/to/data.json';
     var jsonData = {"item": [
@@ -75,6 +76,10 @@
 ]};
 
     </script>
+    <!-- ###################### -->
+    <!-- ##### HTML  BODY ##### -->
+    <!-- ###################### -->
+
 <div class="container">
 <div class="row">
   <div class="col-md-6">
@@ -107,7 +112,12 @@
             </button>
         {{/item}}
     </script>
- 
+
+
+    <!-- ###################### -->
+    <!-- ### INTERACTIVE JS ### -->
+    <!-- ###################### -->
+    
     <!--4. Handlebars.js slingshot -->
     <script>
     //4a.function creation
@@ -153,44 +163,5 @@ $(document).ready(function() {
   });
 });
 </script>
-
-<script id="playlist_player">
-/*
-window.onload = function(e, loop) {
-    var onPlay = [false],
-      pCount = 0;
-      // startURL = "", // url de ton slide qui commencera par http://
-      playlistUrls = [
-        "./audio/cmn-ni3.mp3",
-        "./audio/cmn-hao3.mp3",
-        "./audio/cmn-lao3.mp3",
-        "./audio/cmn-mao3.mp3"
-        ], // liste de tes sons
-      howlerBank = [],
-      loop = true;
-      
-    var onEnd = function(e) {
-      if (loop === true ) { pCount = (pCount + 1 !== howlerBank.length)? pCount + 1 : 0; }
-      else { pCount = pCount + 1; }
-      howlerBank[pCount].play();
-    };
-      
-    playlistUrls.forEach(function(current, i) {   
-      howlerBank.push(new Howl({ urls: [playlistUrls[i]], onend: onEnd, buffer: true }))
-    });
-
-    // On défini un callback :
-    //var initiatePlaylist = function(e) {
-    //  if (!onPlay[0]) {
-       // onPlay[0] = true;
-        howlerBank[0].play();
-   //   }
-   // };
-
-
-// initiatePlaylist();
-}
-*/
-    </script>
   </body>
 </html>
