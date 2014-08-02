@@ -5,7 +5,7 @@
     <title>Concise Handlebars.js</title>
     <!-- 0a. CSS -->
     <link rel='stylesheet' href='./css/bootstrap.min.css'><!-- main.css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
  
     <!-- 0a. JS -->
     <!-- <script src="//code.jquery.com/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
@@ -98,12 +98,12 @@
     <!-- 3. Template -->
     <script id="tpl" type="text/template">
         {{#item}}
-            <button class="tpl bird sound {{ecosystem}} col-md-2 col-xs-4" data-key="{{key}}" data-name="{{name}}" style='background-image:url("./img/{{name}}.jpg");background-size: 100% 100%;'>
-              <!-- <img src="img/{{name}}.jpg" /><br /> -->
+            <button class="tpl bird sound {{ecosystem}} col-md-2 col-xs-4" data-key="{{key}}" data-name="{{name}}" data-iucn="{{iucn}}" style='background-image:url("./img/photo/{{name}}.jpg");background-size: 100% 100%;'>
+              <!-- <img src="img/photo/{{name}}.jpg" /><br /> -->
                   {{#if key}} <a href="./audio/{{name}}.mp3">{{key}}</a> — {{/if}}
-                  {{name}}
+                    {{name}}
                   {{#if latin}} (<a href="http://en.wikipedia.org/wiki/{{latin}}">{{latin}}</a>){{/if}}.
-              <audio src="./audio/{{name}}.mp3" controls autoplaysNOO loop preload="auto" ></audio>
+              <audio src="./audio/{{name}}.mp3" controlsNO autoplaysNO loop preload="auto" ></audio>
             </button>
         {{/item}}
     </script>
@@ -126,7 +126,7 @@
 <!--5a. INTERACTIONS -->
 <script id="interactive_player">
 var playSound = function ($this) {
-                                                    console.log("♪+1");// edited
+  console.log("♪+1");// edited
   // get phonetic properties
     var pho = $this.attr("data-name");
     var key = $this.attr("data-key");

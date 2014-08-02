@@ -18,7 +18,7 @@ button.bird {
   margin: 3px;
   padding: 1.5em; /* padding + border = 1.6em */
   border: 0.1em solid #ddd;
-  border-radius: 0.4em;
+  border-radius: 5em;
   text-decoration: none;
   background: #fff;
   color: #333;
