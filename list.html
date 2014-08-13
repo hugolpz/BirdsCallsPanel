@@ -1,168 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
     <meta charset="utf-8">
-    <title>Concise Handlebars.js</title>
-    <!-- 0a. CSS -->
-    <link rel='stylesheet' href='./css/bootstrap.min.css'><!-- main.css -->
-    <link rel="stylesheet" href="./css/style.css">
- 
-    <!-- 0a. JS -->
-    <!-- <script src="//code.jquery.com/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script><!-- online handlebars.js-->
-    <script src="js/jquery-2.0.3.min.js"></script><!-- online jquery.js -->
-    <script src="js/handlebars.min.js"></script>
-    <script rel='script' src='./js/howler.js'></script>
-    <!-- Twiter CSS -->
-    <!-- howler or html5 audio -->
-  </head>
-  <style>
-  </style>
- 
-  <body>
-    <!-- ###################### -->
-    <!-- 1. Data (json format!) -->
-    <script>
-    var url='data.json'; // relative url : 'data.json'; protocole-relative absolute url: '//website.org/path/to/data.json';
-    var jsonData = {"item": [
-    { "latin":"Glaucidium cuculoides", "name":"Asian_barred_owlet", "key":"1", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Eurystomus orientalis", "name":"Asian_dollarbird", "key":"", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Irena puella", "name":"Asian_fairy_bluebird", "key":"", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Threskiornis melanocephalus", "name":"Black-headed_ibis", "key":"2", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Oriolus xanthornus", "name":"Black-hooded_oriole", "key":"3", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Dinopium benghalense", "name":"Black-rumped_flameback", "key":"4", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Amauornis bicolour", "name":"Black-tailed_crake", "key":"5", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Limosa limosa", "name":"Black-tailed_godwit", "key":"", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Megalaima asiatica", "name":"Blue-throated_barbet", "key":"6", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Cissa chinensis", "name":"Common_green_magpie", "key":"7", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Alcedo althis", "name":"Common_kingfisher", "key":"8", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Mergus merganser", "name":"Common_merganser", "key":"9", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Ceryle lugubris", "name":"Crested_kingfisher", "key":"0", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Spilornis cheela", "name":"Crested_serpent_eagle", "key":"-", "ecosystem":"Sky", "iucn":"LC"},
-    { "latin":"Surniculus lugubris", "name":"Cuckoo_drongo", "key":"q", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Phalacrocorax carbo", "name":"Great_cormorant", "key":"w", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Mulleripicus pulverulentus", "name":"Great_slaty_woodpecker", "key":"e", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Polyplectron bicalcaratum", "name":"Grey_peacock-pheasant", "key":"r", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Motacilla cinerea", "name":"Grey_wagtail", "key":"t", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Gracula religiosa", "name":"Myna_hill", "key":"a", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Pycnonotus leucogenys", "name":"Himalayan_bulbul", "key":"y", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Ibidorhyncha struthersii", "name":"Ibisbill", "key":"u", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Lophura leucomelana lathami", "name":"Kalij_pheasant", "key":"i", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Leptoptilos javanicus", "name":"Lesser_adjutant", "key":"o", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Pericrocotus ethologus", "name":"Long-tailed_minivet", "key":"p", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Anhinga melanogaster", "name":"Oriental_darter", "key":"s", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Streptopelia orientalis", "name":"Oriental_turtle_dove", "key":"", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Haliaeetus leucoryphus", "name":"Pallas", "key":"", "ecosystem":"Sky", "iucn":"LC"},
-    { "latin":"Ceryle rudis", "name":"Pied_kingfisher", "key":"d", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Rhyacornis fuliginosa", "name":"Plumbeous_water_redstart", "key":"f", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Gallus gallus", "name":"Red_junglefowl", "key":"h", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Psittacula alexandri", "name":"Red-breasted_parakeet", "key":"g", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Vanellus indicus", "name":"Red-wattled_lapwing", "key":"j", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Vanellus duvaucelii", "name":"River_lapwing", "key":"k", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Sterna aurantia", "name":"River_tern_bhadra", "key":"l", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Anthreptes singalensis", "name":"Ruby-cheeked_sunbird", "key":"z", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Leiothrix argentauris", "name":"Silver-eared_mesia", "key":"", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Enicurus schistaceus", "name":"Slaty-backed_forktail", "key":"x", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Dicrurus bracteatus", "name":"Spangled_drongo", "key":"c", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Streptopelia chinensis", "name":"Spotted_dove", "key":"v", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Arachnothera magna", "name":"Streaked_spiderhunter", "key":"b", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Treron sphenurus", "name":"Wedge-tailed_green_pigeon", "key":"n", "ecosystem":"Mid-storey_or_capony", "iucn":"LC"},
-    { "latin":"Arborophiila atrogularis", "name":"White-cheeked_partridge", "key":"m", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Garrulax leucolophus", "name":"White-crested_laughingthrush", "key":"", "ecosystem":"Ground_dwelling_or_understorey", "iucn":"LC"},
-    { "latin":"Gyps bengalensis", "name":"", "key":"", "ecosystem":"Sky", "iucn":"LC"},
-    { "latin":"Halcyon smyrnensis", "name":"White-throated_kingfisher", "key":"", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"Carina scutulata", "name":"", "key":"", "ecosystem":"River", "iucn":"LC"},
-    { "latin":"", "name":"White-naped_vulture", "key":"", "ecosystem":"Sky", "iucn":"LC"}
-]};
-
-    </script>
-    <!-- ###################### -->
-    <!-- ##### HTML  BODY ##### -->
-    <!-- ###################### -->
-
-<div class="container">
-<div class="row">
-  <div class="col-md-6">
-    1. Put cursor into form field.<br />
-    2. It's ready to work !<br />
-    3. Test the <b>Interactive Bird Voices Panel</b> (IBVP) by pressing a touch with your hand
-  </div>
-  <div class="col-md-6">
-    <form>
-      <fieldset>
-        <label for="target">Put mouse's </label>
-        <input id="input" placeholder=" cursor here !" type="text" autofocus><!-- visibility hidden -->
-      </fieldset>
-    </form>
-  </div>
-</div>
- 
-    <!-- 2. Anchor -->
-<div class="row" id="anchor">This div is the <b>#anchor</b>.<br /></div>
- 
-    <!-- 3. Template -->
-    <script id="tpl" type="text/template">
-        {{#item}}
-            <button class="tpl bird sound {{ecosystem}} col-md-2 col-xs-4" data-key="{{key}}" data-name="{{name}}" data-iucn="{{iucn}}" style='background-image:url("./img/photo/{{name}}.jpg");background-size: 100% 100%;'>
-              <!-- <img src="img/photo/{{name}}.jpg" /><br /> -->
-                  {{#if key}} <a href="./audio/{{name}}.mp3">{{key}}</a> — {{/if}}
-                  {{name}}
-                  {{#if latin}} (<a href="http://en.wikipedia.org/wiki/{{latin}}">{{latin}}</a>){{/if}}.
-                  <img src="img/iucn/Status_iucn3.1_{{iucn}}.png" width="240px" />
-              <audio src="./audio/{{name}}.mp3" controlsNO autoplaysNO loop preload="auto" ></audio>
-            </button>
-        {{/item}}
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-    <!-- ###################### -->
-    <!-- ### INTERACTIVE JS ### -->
-    <!-- ###################### -->
-    
-    <!--4. Handlebars.js slingshot -->
-    <script>
-    //4a.function creation
-    var slingshot = function (data, tplId, anchor) {
-     //$.getJSON(url, function(data) {
-              var template = $(tplId).html();
-              var stone = Handlebars.compile(template)(data);
-              $(anchor).append(stone);
-    // });
-  }
-    //4b.function firing
-    slingshot(jsonData, '#tpl', '#anchor'); // since url = 'data.json' , we can use both notations. 
-    </script>
+    <title>BirdCalls of India</title>
 
-
-<!--5a. INTERACTIONS -->
-<script id="interactive_player">
-var playSound = function ($this) {
-  console.log("♪+1");// edited
-  // get phonetic properties
-    var pho = $this.attr("data-name");
-    var key = $this.attr("data-key");
-  $this.addClass("playing");
-  // playing
-  var sound = new Howl({
-     //                                               console.log("♪+2");// edited
-      urls: ['./audio/'+pho+'.mp3'],
-      onend: function() { $this.removeClass("playing"); }
-  }).play();
-  console.log("♪+; pho: "+pho+"; name: "+ key);// edited
-}; // end
-
-
-$(document).ready(function() {
-  $(".sound").click(function(){ 
-    playSound( $(this) );
-  });
-
-  $("#input").on("keyup", function () {
-    var input = $("#input").val().slice(-1);
-    playSound( $(".bird[data-key="+input+"]") );
-    $("#input").val(""); // clean up field!
-  });
-});
-</script>
-  </body>
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <!--Javascripts-->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <script>window.jQuery || document.write('<script src="js/IE9.js"><\/script>')</script>
+    <![endif]-->
+</head>
+<body class="list">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="everything-but-footer">
+        <header>
+            <ul>
+                <li><a href="credits.html" title="Credits">Credits</a></li>
+                <li><a href="list.html" title="List of Birds">List of Birds</a></li>
+                <li><a href="index.html" title="Home">Home</a></li>
+            </ul>
+        </header>
+        <div id="body">
+            <ul class="bird-list">
+                <li class="wetland">
+                    <div class="bird-img" style="background-image:url('img/photo/Crested_kingfisher.jpg')">
+                        <audio src="audio/Crested_kingfisher.mp3" controls></audio>
+                    </div><!--bird-img-->
+                    <div class="bird-info">
+                        <p class="title">Crested Kingfisher <span>Irena puella</span></p>
+                        <p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="#" class="see-more">( see more )</a></p>
+                        <ol>
+                            <li>Loves to hang around in parties or in pairs</li>
+                            <li class="iucn"><a href="#" class="CR"></a></li>
+                            <li class="ecosystem"><a href="#" class="wetland"></a></li>
+                        </ol>
+                        <div class="clearfix"></div><!--clearfix-->
+                    </div><!--bird-info-->
+                    <div class="clearfix"></div>
+                </li>
+                <li class="tree">
+                    <div class="bird-img" style="background-image:url('img/photo/Crested_kingfisher.jpg')">
+                        <audio src="audio/Crested_kingfisher.mp3" controls></audio>
+                    </div><!--bird-img-->
+                    <div class="bird-info">
+                        <p class="title">Crested Kingfisher <span>Irena puella</span></p>
+                        <p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="#" class="see-more">( see more )</a></p>
+                        <ol>
+                            <li>Loves to hang around in parties or in pairs</li>
+                            <li class="iucn"><a href="#" class="DD"></a></li>
+                            <li class="ecosystem"><a href="#" class="wetland"></a></li>
+                        </ol>
+                        <div class="clearfix"></div><!--clearfix-->
+                    </div><!--bird-info-->
+                    <div class="clearfix"></div>
+                </li>
+                <li class="ground">
+                    <div class="bird-img" style="background-image:url('img/photo/Crested_kingfisher.jpg')">
+                        <audio src="audio/Crested_kingfisher.mp3" controls></audio>
+                    </div><!--bird-img-->
+                    <div class="bird-info">
+                        <p class="title">Crested Kingfisher <span>Irena puella</span></p>
+                        <p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="#" class="see-more">( see more )</a></p>
+                        <ol>
+                            <li>Loves to hang around in parties or in pairs</li>
+                            <li class="iucn"><a href="#" class="EN"></a></li>
+                            <li class="ecosystem"><a href="#" class="wetland"></a></li>
+                        </ol>
+                        <div class="clearfix"></div><!--clearfix-->
+                    </div><!--bird-info-->
+                    <div class="clearfix"></div>
+                </li>
+                <li class="sky">
+                    <div class="bird-img" style="background-image:url('img/photo/Crested_kingfisher.jpg')">
+                        <audio src="audio/Crested_kingfisher.mp3" controls></audio>
+                    </div><!--bird-img-->
+                    <div class="bird-info">
+                        <p class="title">Crested Kingfisher <span>Irena puella</span></p>
+                        <p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="#" class="see-more">( see more )</a></p>
+                        <ol>
+                            <li>Loves to hang around in parties or in pairs</li>
+                            <li class="iucn">
+                                <a href="#" class="EW"></a>
+                            </li>
+                            <li class="ecosystem">
+                                <a href="#" class="wetland"></a>
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div><!--clearfix-->
+                    </div><!--bird-info-->
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+        </div><!--body-->
+    </div><!--everything-but-footer-->
+    <footer></footer>
+</body>
 </html>

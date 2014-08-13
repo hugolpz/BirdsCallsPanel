@@ -1,0 +1,354 @@
+@charset "utf-8";body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,figure,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}abbr,acronym{border:0;}a{text-decoration:none;}html,button,input,select,textarea{color:#222;}
+body{font-size:1em;line-height:1.4;}::-moz-selection{background:#b3d4fc;text-shadow:none;}
+::selection{background:#b3d4fc;text-shadow:none;}hr{display:block;height:1px;border:0;border-top:1px solid #707070;margin:1em 0;padding:0;}
+img{vertical-align:middle;}fieldset{border:0;margin:0;padding:0;}textarea{resize:vertical;}
+.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0;}
+.lt-ie9 footer, .lt-ie9 header, .lt-ie9 nav {margin-top:0; margin-bottom:0;}
+
+/* =========================================
+   Fonts
+   ========================================= */
+
+@font-face {
+    font-family: 'aller';
+    src: url('../fonts/aller_bd-webfont.eot');
+    src: url('../fonts/aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_bd-webfont.woff') format('woff'),
+         url('../fonts/aller_bd-webfont.ttf') format('truetype'),
+         url('../fonts/aller_bd-webfont.svg#allerbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'aller';
+    src: url('../fonts/aller_it-webfont.eot');
+    src: url('../fonts/aller_it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_it-webfont.woff') format('woff'),
+         url('../fonts/aller_it-webfont.ttf') format('truetype'),
+         url('../fonts/aller_it-webfont.svg#alleritalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'aller';
+    src: url('../fonts/aller_rg-webfont.eot');
+    src: url('../fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/aller_rg-webfont.woff') format('woff'),
+         url('../fonts/aller_rg-webfont.ttf') format('truetype'),
+         url('../fonts/aller_rg-webfont.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* =========================================
+   Main Style
+   ========================================= */
+
+.clearfix{clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+strong{font-weight:bold;}
+
+a {}
+
+a:hover {}
+
+html, body {height:100%;}
+
+body {
+	background:#A1D4A9;
+	color:#000;
+	font-family: "PT Sans", sans-serif;
+	font-size:12px;
+}
+
+header {
+	width:100%;
+	background:#4A4A4A;
+	color:#fff;
+	border-bottom:#efefef 1px solid;
+	padding: 10px 0;
+	position:fixed;
+	top:0;
+	z-index:10;
+}
+
+header ul {
+	height:40px;
+}
+
+header ul li {
+	float:right;
+	width:40px;
+	height:40px;
+	padding:0 10px;
+	border-right:#fff 1px solid;
+}
+
+header ul li:first-child {
+	border:none;
+}
+
+header ul li a {
+	width:40px;
+	height:40px;
+	border-radius:4px;
+	display:block;
+	text-indent: -99999px;
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+	
+
+header ul li:first-child a {
+	background-image:url('../img/ic-credits.png');
+	
+}
+
+header ul li:nth-child(2) a {
+	background-image:url('../img/ic-list.png');
+}
+
+header ul li:last-child a {
+	background-image:url('../img/ic-home.png');
+}
+
+header ul li a:hover {
+	background-color:rgba(0,0,0,0.3);
+}
+
+#body {
+	width: 100%;
+	min-height: 334px;
+	margin-top:60px;
+}
+
+footer {display:none;}
+
+
+
+/*Home Page*/
+
+body.home {
+	background:#A1D4A9 url('../img/logo.png') center center no-repeat;
+}
+
+.home footer {
+	height:74px;
+	padding-top:15px;
+	display:block;
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align:center;
+	color:#fff;
+	font-size:13px;
+	line-height:13px;
+	border-top:#fff dotted 2px;
+	margin:0 auto;
+	background:#A1D4A9;
+	max-width:530px;
+}
+
+/*List Page*/
+
+.list ul.bird-list {}
+
+.list ul.bird-list > li {
+	width:100%;
+	max-width:768px;
+	height:230px;
+	margin:0 auto;
+	background:#00AD9E;
+	display:block;
+	overflow:hidden;
+	border-bottom: #8A8A8A 1px solid;
+}
+
+.list > ul.bird-list > li > img {
+	max-width:270px;
+	float:left;
+}
+
+.bird-img {
+	float:left;
+	width:100%;
+	width:270px;
+	height:230px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; 
+	position:relative;
+}
+
+audio {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+.bird-info {
+	float:left;
+	width:488px;
+	padding-left:10px;
+	font-family:'Aller', sans-serif;
+	color:#fff;
+}
+
+p.title {
+	font-size:23px;
+	font-weight:bold;
+	text-transform: uppercase;
+	border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	line-height: 23px;
+}
+
+p.title span /*For Latin Name*/ {
+	font-size:18px;
+	font-weight:normal;
+	font-style: italic;
+	text-transform: none;
+}
+
+p.description {
+	font-family: 'PT Sana', sans-serif;
+	font-size: 12px;
+	color: #000;
+	line-height: 20px;
+	padding-right: 20px;
+	height:60px;
+	overflow:hidden;
+	margin-bottom:40px;
+}
+
+p.description a {color:#efefef;}
+
+p.description a:hover {color:#fff;}
+
+.list ul.bird-list ol {}
+
+.list ul.bird-list ol > li {
+	float:right;
+	min-height:35px;
+}
+
+.list ul.bird-list ol > li:first-child {
+	float:left;
+	font-size:15px;
+	text-transform:uppercase;
+	line-height:35px;
+}
+
+.list ul.bird-list ol > li a {
+	height:35px;
+	display:table-cell;
+	vertical-align: middle;
+}
+
+
+li.ecosystem a, ul.keys i {
+	width:25px;
+	height:20px;
+	display:inline-block;
+	background-position:center center;
+	background-repeat: no-repeat;
+	vertical-align:middle;
+}
+	ul.keys i {margin-right:10px;}
+
+li.wetland {background:#00AE9F !important;}
+li.tree {background:#8BC53F !important;}
+li.sky {background:#84CEC5 !important;}
+li.ground {background:#4A4A4A !important;}
+	li.wetland li.ecosystem a, i.wetland {background-image: url('../img/icons/wetland.png');}
+	li.tree li.ecosystem a, i.tree {background-image: url('../img/icons/tree.png');}
+	li.sky li.ecosystem a, i.sky {background-image: url('../img/icons/sky.png');}
+	li.ground li.ecosystem a, i.ground {background-image: url('../img/icons/ground.png');}
+
+
+li.iucn {
+	margin:0 20px;
+}
+
+li.iucn a, .iucn-status i {
+	width:32px;
+	height:32px;
+	display:inline-block;
+	background-position:center center;
+	background-repeat: no-repeat;
+	text-indent:-9999px;
+}
+		
+	
+	li.iucn .LC, .iucn-status .LC i {background-image: url('../img/iucn/LC.png');}
+	li.iucn .NT, .iucn-status .NT i {background-image: url('../img/iucn/NT.png');}
+	li.iucn .VU, .iucn-status .VU i {background-image: url('../img/iucn/VU.png');}
+	li.iucn .EN, .iucn-status .EN i {background-image: url('../img/iucn/EN.png');}
+	li.iucn .CR, .iucn-status .CR i {background-image: url('../img/iucn/CR.png');}
+	li.iucn .EW, .iucn-status .EW i {background-image: url('../img/iucn/EW.png');}
+	li.iucn .DD, .iucn-status .DD i {background-image: url('../img/iucn/DD.png');}
+	li.iucn .NE, .iucn-status .NE i {background-image: url('../img/iucn/NE.png');}
+	li.iucn .EX, .iucn-status .EX i {background-image: url('../img/iucn/EX.png');}
+
+/*Credits Page*/
+
+.credits #body {
+	width:100%;
+	max-width:768px;
+	margin:0 auto;
+	font-size:12px;
+	font-family:'PT Sans';
+	margin-top:80px;
+	padding-bottom:20px;
+
+}
+
+.credits a {color:#5F5F5F;}
+.credits a:hover {color:#000;}
+
+.credits h2,h3 {
+	font-family:'Aller', sans-serif;
+	font-weight:bold;
+	font-size:23px;
+	line-height:23px;
+	border-bottom:#fff 1px dotted;
+	color:#fff;
+	padding-bottom:20px;
+	margin-bottom:20px;
+	margin-top:50px;
+	text-transform:uppercase;
+}
+
+ul.keys, ul.iucn-status {margin-bottom:20px}
+
+ul.keys li, ul.iucn-status li {
+	margin-bottom:10px;
+	line-height:32px;
+	font-weight:bold;
+}
+
+ul.iucn-status li i {
+	margin-right:10px;
+}
+
+.credits p {
+	line-height:20px;
+}
+
+/* =========================================
+   Media Queries
+   ========================================= */   
