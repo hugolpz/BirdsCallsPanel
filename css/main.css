@@ -333,7 +333,7 @@ li.iucn a, .iucn-status i {
 	text-transform:uppercase;
 }
 
-ul.keys, ul.iucn-status {margin-bottom:20px}
+ul.keys, ul.iucn-status {margin-bottom:20px;}
 
 ul.keys li, ul.iucn-status li {
 	margin-bottom:10px;
@@ -352,3 +352,64 @@ ul.iucn-status li i {
 /* =========================================
    Media Queries
    ========================================= */   
+
+@media only screen and (max-width: 783px) {
+	header {
+		padding: 5px 0;
+	}
+	#body {
+		margin-top:50px;
+	}
+	.bird-img {
+		width:35%;
+	}
+	.bird-info {
+		width:calc(65% - 10px);
+	}
+   li.iucn {
+		margin: 0 10px;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	p.title {
+		margin-top:15px;
+		margin-bottom:10px;
+	}
+	p.description {
+		padding-right:10px;
+		margin-bottom:10px;
+		height:80px;
+	}
+	.list ul.bird-list ol > li:first-child {
+		display:block;
+		width:100%;
+		line-height:25px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.list ul.bird-list > li {
+		height:250px;
+	}
+	.bird-img {
+		height:100%;
+	}
+	p.title span {
+		display:block;
+		text-align:right;
+	}
+	p.description {
+		line-height:18px;
+		height:70px;
+	}
+}
+
+@media only screen and (max-width: 410px) {
+	.list ul.bird-list ol > li:first-child {
+		line-height:15px;
+	}
+	p.description {
+		line-height:14px;
+	}
+}
