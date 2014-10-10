@@ -30,54 +30,57 @@
     <script>  // Mid-storey_or_capony ; Ground_dwelling_or_understorey
     var url='data.json'; // relative url : 'data.json'; protocole-relative absolute url: '//website.org/path/to/data.json';
     var jsonData = {"item": [
-    { "latin":"Glaucidium cuculoides", "name":"Asian_barred_owlet", "key":"1", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Eurystomus orientalis", "name":"Asian_dollarbird", "key":"", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Irena puella", "name":"Asian_fairy_bluebird", "key":"", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Threskiornis melanocephalus", "name":"Black-headed_ibis", "key":"2", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Oriolus xanthornus", "name":"Black-hooded_oriole", "key":"3", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Dinopium benghalense", "name":"Black-rumped_flameback", "key":"4", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Amauornis bicolour", "name":"Black-tailed_crake", "key":"5", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Limosa limosa", "name":"Black-tailed_godwit", "key":"", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Megalaima asiatica", "name":"Blue-throated_barbet", "key":"6", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Cissa chinensis", "name":"Common_green_magpie", "key":"7", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Alcedo althis", "name":"Common_kingfisher", "key":"8", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Mergus merganser", "name":"Common_merganser", "key":"9", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Ceryle lugubris", "name":"Crested_kingfisher", "key":"0", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Spilornis cheela", "name":"Crested_serpent_eagle", "key":"-", "ecosystem":"sky", "iucn":"LC"},
-    { "latin":"Surniculus lugubris", "name":"Cuckoo_drongo", "key":"q", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Phalacrocorax carbo", "name":"Great_cormorant", "key":"w", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Mulleripicus pulverulentus", "name":"Great_slaty_woodpecker", "key":"e", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Polyplectron bicalcaratum", "name":"Grey_peacock-pheasant", "key":"r", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Motacilla cinerea", "name":"Grey_wagtail", "key":"t", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Gracula religiosa", "name":"Myna_hill", "key":"a", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Pycnonotus leucogenys", "name":"Himalayan_bulbul", "key":"y", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Ibidorhyncha struthersii", "name":"Ibisbill", "key":"u", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Lophura leucomelana lathami", "name":"Kalij_pheasant", "key":"i", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Leptoptilos javanicus", "name":"Lesser_adjutant", "key":"o", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Pericrocotus ethologus", "name":"Long-tailed_minivet", "key":"p", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Anhinga melanogaster", "name":"Oriental_darter", "key":"s", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Streptopelia orientalis", "name":"Oriental_turtle_dove", "key":"", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Haliaeetus leucoryphus", "name":"Pallas", "key":"", "ecosystem":"sky", "iucn":"LC"},
-    { "latin":"Ceryle rudis", "name":"Pied_kingfisher", "key":"d", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Rhyacornis fuliginosa", "name":"Plumbeous_water_redstart", "key":"f", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Gallus gallus", "name":"Red_junglefowl", "key":"h", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Psittacula alexandri", "name":"Red-breasted_parakeet", "key":"g", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Vanellus indicus", "name":"Red-wattled_lapwing", "key":"j", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Vanellus duvaucelii", "name":"River_lapwing", "key":"k", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Sterna aurantia", "name":"River_tern_bhadra", "key":"l", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Anthreptes singalensis", "name":"Ruby-cheeked_sunbird", "key":"z", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Leiothrix argentauris", "name":"Silver-eared_mesia", "key":"", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Enicurus schistaceus", "name":"Slaty-backed_forktail", "key":"x", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Dicrurus bracteatus", "name":"Spangled_drongo", "key":"c", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Streptopelia chinensis", "name":"Spotted_dove", "key":"v", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Arachnothera magna", "name":"Streaked_spiderhunter", "key":"b", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Treron sphenurus", "name":"Wedge-tailed_green_pigeon", "key":"n", "ecosystem":"tree", "iucn":"LC"},
-    { "latin":"Arborophiila atrogularis", "name":"White-cheeked_partridge", "key":"m", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Garrulax leucolophus", "name":"White-crested_laughingthrush", "key":"", "ecosystem":"groud", "iucn":"LC"},
-    { "latin":"Gyps bengalensis", "name":"", "key":"", "ecosystem":"sky", "iucn":"LC"},
-    { "latin":"Halcyon smyrnensis", "name":"White-throated_kingfisher", "key":"", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"Carina scutulata", "name":"", "key":"", "ecosystem":"wetland", "iucn":"LC"},
-    { "latin":"", "name":"White-naped_vulture", "key":"", "ecosystem":"sky", "iucn":"LC"}
+    {"latin":"Glaucidium cuculoides","english":"Asian barred owlet","img":"Asian_barred_owlet.jpg","mp3":"Asian_barred_owlet.mp3","key":1,"ecosystem":"tree","iucn":"LC"},
+	{"latin":"Eurystomus orientalis","english":"Asian dollarbird","img":"Asian_dollarbird.jpg","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Irena puella","english":"Asian fairy bluebird","img":"Asian_fairy_bluebird.jpg","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Oriolus xanthornus","english":"Black-hooded oriole","img":"Black-hooded_oriole.jpg","mp3":"Black-hooded_oriole.mp3","key":3,"ecosystem":"tree","iucn":"LC"},
+	{"latin":"Dinopium benghalense","english":"Black-rumped flameback","img":"Black-rumped_flameback.jpg","mp3":"Black-rumped_flameback.mp3","key":4,"ecosystem":"tree","iucn":"LC"},
+	{"latin":"Amauornis bicolour","english":"Black-tailed crake","img":"Black-tailed_crake.jpg","mp3":"Black-tailed_crake.mp3","key":5,"ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Limosa limosa","english":"Black-tailed godwit","img":"Black-tailed_godwit.jpg","ecosystem":"wetland","iucn":"NT"},
+	{"latin":"Megalaima asiatica","english":"Blue-throated barbet","img":"Blue-throated_barbet.jpg","mp3":"Blue-throated_barbet.mp3","key":6,"ecosystem":"tree","iucn":"LC"},
+	{"latin":"Cissa chinensis","english":"Common green magpie","img":"Common_green_magpie.jpg","mp3":"Common_green_magpie.mp3","key":7,"ecosystem":"ground","iucn":"LC"},
+	{"latin":"Arborophila torqueola","english":"Common hill partridge","img":"Common_hill_partridge.jpg","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Alcedo althis","english":"Common kingfisher","img":"Common_kingfisher.jpg","mp3":"Common_kingfisher.mp3","key":8,"ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Mergus merganser","english":"Common merganser","img":"Common_merganser.jpg","mp3":"Common_merganser.mp3","key":9,"ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Ceryle lugubris","english":"Crested kingfisher","img":"Crested_kingfisher.jpg","mp3":"Crested_kingfisher.mp3","key":0,"ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Spilornis cheela","english":"Crested serpent eagle","img":"Crested_serpent_eagle.jpg","mp3":"Crested_serpent_eagle.mp3","key":"-","ecosystem":"sky","iucn":"LC"},
+	{"latin":"Surniculus lugubris","english":"Cuckoo drongo","img":"Cuckoo_drongo.jpg","mp3":"Cuckoo_drongo.mp3","key":"q","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Phalacrocorax carbo","english":"Great cormorant","img":"Great_cormorant.jpg","mp3":"Great_cormorant.mp3","key":"w","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Buceros bicornis","english":"Great hornbill","img":"Great_hornbill.jpg","ecosystem":"tree","iucn":"NT"},
+	{"latin":"Mulleripicus pulverulentus","english":"Great slaty woodpecker","img":"Great_slaty_woodpecker.jpg","mp3":"Great_slaty_woodpecker.mp3","key":"e","ecosystem":"tree","iucn":"VU"},
+	{"latin":"Polyplectron bicalcaratum","english":"Grey peacock-pheasant","img":"Grey_peacock-pheasant.jpg","mp3":"Grey_peacock-pheasant.mp3","key":"r","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Motacilla cinerea","english":"Grey wagtail","img":"Grey_wagtail.jpg","mp3":"Grey_wagtail.mp3","key":"t","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Pycnonotus leucogenys","english":"Himalayan bulbul","img":"Himalayan_bulbul.jpg","mp3":"Himalayan_bulbul.mp3","key":"y","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Ibidorhyncha struthersii","english":"Ibisbill","img":"Ibisbill.jpg","mp3":"Ibisbill.mp3","key":"u","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Lophura leucomelana lathami","english":"Kalij pheasant","img":"Kalij_pheasant.jpg","mp3":"Kalij_pheasant.mp3","key":"i","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Leptoptilos javanicus","english":"Lesser adjutant","img":"Lesser_adjutant.jpg","mp3":"Lesser_adjutant.mp3","key":"o","ecosystem":"wetland","iucn":"VU"},
+	{"latin":"Pericrocotus ethologus","english":"Long-tailed minivet","img":"Long-tailed_minivet.jpg","mp3":"Long-tailed_minivet.mp3","key":"p","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Gracula religiosa","english":"Myna hill","img":"Myna_hill.jpg","mp3":"Myna_hill.mp3","key":"a","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Anhinga melanogaster","english":"Oriental darter","img":"Oriental_darter.jpg","mp3":"Oriental_darter.mp3","key":"s","ecosystem":"wetland","iucn":"NT"},
+	{"latin":"Anthracoceros albirostris","english":"Oriental pied hornbill","img":"Oriental_pied_hornbill.jpg","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Streptopelia orientalis","english":"Oriental turtle dove","img":"Oriental_turtle_dove.jpg","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Haliaeetus leucoryphus","english":"Pallas","img":"Pallas.jpg","ecosystem":"sky","iucn":"VU"},
+	{"latin":"Ceryle rudis","english":"Pied kingfisher","img":"Pied_kingfisher.jpg","mp3":"Pied_kingfisher.mp3","key":"d","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Rhyacornis fuliginosa","english":"Plumbeous water redstart","img":"Plumbeous_water_redstart.jpg","mp3":"Plumbeous_water_redstart.mp3","key":"f","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Gallus gallus","english":"Red junglefowl","img":"Red_junglefowl.jpg","mp3":"Red_junglefowl.mp3","key":"h","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Psittacula alexandri","english":"Red-breasted parakeet","img":"Red-breasted_parakeet.jpg","mp3":"Red-breasted_parakeet.mp3","key":"g","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Vanellus indicus","english":"Red-wattled lapwing","img":"Red-wattled_lapwing.jpg","mp3":"Red-wattled_lapwing.mp3","key":"j","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Vanellus duvaucelii","english":"River lapwing","img":"River_lapwing.jpg","mp3":"River_lapwing.mp3","key":"k","ecosystem":"wetland","iucn":"NT"},
+	{"latin":"Sterna aurantia","english":"River tern","img":"River_tern.jpg","mp3":"River_tern.mp3","key":"l","ecosystem":"wetland","iucn":"NT"},
+	{"latin":"Anthreptes singalensis","english":"Ruby-cheeked sunbird","img":"Ruby-cheeked_sunbird.jpg","mp3":"Ruby-cheeked_sunbird.mp3","key":"z","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Aceros nipalensis","english":"Rufous-necked hornbill","img":"Rufous-necked_hornbill.jpg","ecosystem":"tree?","iucn":"VU"},
+	{"latin":"Leiothrix argentauris","english":"Silver-eared mesia","img":"Silver-eared_mesia.jpg","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Enicurus schistaceus","english":"Slaty-backed forktail","img":"Slaty-backed_forktail.jpg","mp3":"Slaty-backed_forktail.mp3","key":"x","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Dicrurus bracteatus","english":"Spangled drongo","img":"Spangled_drongo.jpg","mp3":"Spangled_drongo.mp3","key":"c","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Streptopelia chinensis","english":"Spotted dove","img":"Spotted_dove.jpg","mp3":"Spotted_dove.mp3","key":"v","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Arachnothera magna","english":"Streaked spiderhunter","img":"Streaked_spiderhunter.jpg","mp3":"Streaked_spiderhunter.mp3","key":"b","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Treron sphenurus","english":"Wedge-tailed green pigeon","img":"Wedge-tailed_green_pigeon.jpg","mp3":"Wedge-tailed_green_pigeon.mp3","key":"n","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Garrulax leucolophus","english":"White-crested laughingthrush","img":"White-crested_laughingthrush.jpg","ecosystem":"ground","iucn":"LC"},
+	{"latin":"Gyps bengalensis","english":"White-naped vulture","img":"White-naped_vulture.jpg","ecosystem":"sky","iucn":"CR"},
+	{"latin":"Halcyon smyrnensis","english":"White-throated kingfisher","img":"White-throated_kingfisher.jpg","mp3":"White-throated_kingfisher.mp3","ecosystem":"wetland","iucn":"LC"},
+	{"latin":"Rhyticeros undulatus","english":"Wreathed hornbill","img":"Wreathed_hornbill.jpg","ecosystem":"tree","iucn":"LC"},
+	{"latin":"Arborophiila atrogularis","english":"White-cheeked partridge","ecosystem":"ground","iucn":"NT"},
+	{"latin":"Threskiornis melanocephalus","english":"Black-headed ibis","mp3":"Black-headed_ibis.mp3","key":2,"ecosystem":"wetland","iucn":"NT"}
 ]};
 </script>
 <body class="list">
@@ -107,12 +110,14 @@
 <script id="tpl" type="text/template">
   {{#item}}
 	<li class="{{ecosystem}}">
-		<div class="bird-img" style="background-image:url('img/photo/{{name}}.jpg')">
-			<audio src="audio/{{name}}.mp3" controls></audio>
+		{{#if img}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/{{img}}')"
+			{{else}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/nophoto.jpg')"
+		{{/if}}>
+			{{#if mp3}}<audio src="audio/{{mp3}}" controls></audio>{{/if}}
 		</div><!--bird-img-->
 		<div class="bird-info">
-			<p class="title">{{name}} <span>{{latin}}</span></p>
-			<p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="#" class="see-more">( see more )</a></p>
+			<p class="title">{{english}} <span>{{latin}}</span></p>
+			<p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="http://en.wikipedia.org/wiki/{{latin}}" class="see-more">( see more )</a></p>
 			<ol>
 				<li>Loves to hang around in parties or in pairs</li>
 				<li class="iucn"><a href="#" class="{{iucn}}"></a></li>
@@ -154,5 +159,34 @@
 	}
 	//4b.function firing
 	slingshot(jsonData, '#tpl', '#hook'); // since url = 'data.json' , we can use both notations. 
+</script>
+
+<!--5a. INTERACTIONS -->
+<script id="interactive_player">
+var playSound = function ($this) {
+  // get phonetic properties
+  var pho = $this.attr("data-name").replace(" ", "_"); // name of the bird and mp3 file.
+  var key = $this.attr("data-key"); // associated keyboard touch.
+  $this.addClass("playing");
+  // playing
+  var sound = new Howl({
+      urls: ['./audio/'+pho+'.mp3'],
+      onend: function() { $this.removeClass("playing"); }
+  }).play();
+  console.log("♪: "+pho+".");// edited
+}; // end
+
+
+$(document).ready(function() {
+  $(".bird-img").click(function(){ 
+    playSound( $(this) );
+  });
+
+/*  $("#input").on("keyup", function () {
+    var input = $("#input").val().slice(-1);
+    playSound( $(".bird[data-key="+input+"]") );
+    $("#input").val(""); // clean up field!
+  }); */
+});
 </script>
 </html>
