@@ -128,19 +128,29 @@
 		<div class="clearfix"></div>
 	</li>
 </script>
-    <!-- 3. Template -->
-    <script id="tpl-old" type="text/template">
-        {{#item}}
-            <button class="tpl bird sound {{ecosystem}} col-md-2 col-xs-4" data-key="{{key}}" data-name="{{name}}" data-iucn="{{iucn}}" style='background-image:url("./img/photo/{{name}}.jpg");background-size: 100% 100%;'>
-              <!-- <img src="img/photo/{{name}}.jpg" /><br /> -->
-                  {{#if key}} <a href="./audio/{{name}}.mp3">{{key}}</a> — {{/if}}
-                  {{name}}
-                  {{#if latin}} (<a href="http://en.wikipedia.org/wiki/{{latin}}">{{latin}}</a>){{/if}}.
-                  <img src="img/iucn/Status_iucn3.1_{{iucn}}.png" width="240px" />
-              <audio src="./audio/{{name}}.mp3" controlsNO autoplaysNO loop preload="auto" ></audio>
-            </button>
-        {{/item}}
-    </script>
+<!-- 3. Template -->
+<script id="tpl-old" type="text/template">
+  {{#item}}
+	<li class="{{ecosystem}}">
+		{{#if img}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/{{img}}')">
+			{{else}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/nophoto.jpg')">
+		{{/if}}
+			{{#if mp3}}<audio src="audio/{{mp3}}" controls></audio>{{/if}}
+		</div><!--bird-img-->
+		<div class="bird-info">
+			<p class="title">{{english}} <span>{{latin}}</span></p>
+			<p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="http://en.wikipedia.org/wiki/{{latin}}" class="see-more">( see more )</a></p>
+			<ol>
+				<li>Loves to hang around in parties or in pairs</li>
+				<li class="iucn"><a href="#" class="{{iucn}}"></a></li>
+				<li class="ecosystem"><a href="#" class="{{ecosystem}}"></a></li>
+			</ol>
+			<div class="clearfix"></div><!--clearfix-->
+		</div><!--bird-info-->
+		<div class="clearfix"></div>
+	</li>
+{{/item}}
+</script>
 
 <!-- ###################### -->
 <!-- ### INTERACTIVE JS ### -->
@@ -148,12 +158,26 @@
 
 <!--4. Handlebars.js slingshot -->
 
+<script>
+/*	//4a.function creation
+	var slingshot = function (data, tplId, anchor) {
+		//$.getJSON(url, function(data) {
+		var template = $(tplId).html();
+		var stone = Handlebars.compile(template)(data);
+		$(anchor).append(stone);
+		// });
+	}
+	//4b.function firing
+	slingshot(jsonData, '#tpl', '#hook'); // since url = 'data.json' , we can use both notations. */
+</script>
+
+<!--5a. INTERACTIONS -->
 <script type="text/javascript">
 	//  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0Arsc5NsNo7xedERucjY3aHdvMkdzdmV2aUE2d2dpN2c&output=html';
-	$(document).ready( function() {
-		Tabletop.init( { key: '0Arsc5NsNo7xedFFzc3ZQWUVZRkR0WmJub2pqLU1Cc1E',
-						callback: showInfo,
-						parseNumbers: true } );
+$(document).ready( function() {
+	Tabletop.init( { key: '0Arsc5NsNo7xedFFzc3ZQWUVZRkR0WmJub2pqLU1Cc1E',
+					callback: showInfo,
+					parseNumbers: true } );
 	});
 
 	function showInfo(data, tabletop) { // function showInfo(rows) { } important as well !
@@ -164,34 +188,34 @@
 			var html = template(data2);
 			$("#hook").append(html);
 		});
-	}
-</script> 
-<!--5a. INTERACTIONS -->
-<script id="interactive_player">
-var playSound = function ($this) {
-  // get phonetic properties
-  var pho = $this.attr("data-name").replace(/ /g, "_"); // name of the bird and mp3 file.
-  var key = $this.attr("data-key"); // associated keyboard touch.
-  $this.addClass("playing");
-  // playing
-  var sound = new Howl({
-      urls: ['./audio/'+pho+'.mp3'],
-      onend: function() { $this.removeClass("playing"); }
-  }).play();
-  console.log("♪: "+pho+".");// edited
-}; // end
+		
+	var playSound = function ($this) {
+	  console.log("♪: fired !");// edited
+	  // get phonetic properties
+	  var pho = $this.attr("data-name").replace(/ /g, "_"); // name of the bird and mp3 file.
+	  var key = $this.attr("data-key"); // associated keyboard touch.
+	  $this.addClass("playing");
+	  // playing
+	  var sound = new Howl({
+		  urls: ['./audio/'+pho+'.mp3'],
+		  onend: function() { $this.removeClass("playing"); }
+	  }).play();
+	  console.log("♪: "+pho+".");// edited
+	}; // end
 
 
-$(document).ready(function() {
-  $(".bird-img").click(function(){ 
-    playSound( $(this) );
-  });
+	$(".bird-img").click(function(){ 
+		playSound( $(this) );
+	});	
+		
+}
+
+
 
 /*  $("#input").on("keyup", function () {
     var input = $("#input").val().slice(-1);
     playSound( $(".bird[data-key="+input+"]") );
     $("#input").val(""); // clean up field!
   }); */
-});
 </script>
 </html>
