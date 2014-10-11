@@ -175,40 +175,40 @@
 <script type="text/javascript">
 	//  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0Arsc5NsNo7xedERucjY3aHdvMkdzdmV2aUE2d2dpN2c&output=html';
 $(document).ready( function() {
-	Tabletop.init( { key: '0Arsc5NsNo7xedFFzc3ZQWUVZRkR0WmJub2pqLU1Cc1E',
-					callback: showInfo,
-					parseNumbers: true } );
+	Tabletop.init( 
+		{ key: '0Arsc5NsNo7xedFFzc3ZQWUVZRkR0WmJub2pqLU1Cc1E',
+			callback: showInfo,
+			parseNumbers: true } 
+	);
+});
+
+function showInfo(data, tabletop) { // function showInfo(rows) { } important as well !
+	var source   = $("#tpl").html();
+	var template = Handlebars.compile(source);
+		$.each( tabletop.sheets("app1").all(), function(i, data2) {
+		var html = template(data2);
+		$("#hook").append(html);
 	});
 
-	function showInfo(data, tabletop) { // function showInfo(rows) { } important as well !
-		var source   = $("#tpl").html();
-		var template = Handlebars.compile(source);
-
-		$.each( tabletop.sheets("app1").all(), function(i, data2) {
-			var html = template(data2);
-			$("#hook").append(html);
-		});
-		
 	var playSound = function ($this) {
-	  console.log("♪: fired !");// edited
-	  // get phonetic properties
-	  var pho = $this.attr("data-name").replace(/ /g, "_"); // name of the bird and mp3 file.
-	  var key = $this.attr("data-key"); // associated keyboard touch.
-	  $this.addClass("playing");
-	  // playing
-	  var sound = new Howl({
-		  urls: ['./audio/'+pho+'.mp3'],
-		  onend: function() { $this.removeClass("playing"); }
-	  }).play();
-	  console.log("♪: "+pho+".");// edited
+		console.log("♪: fired !");// edited
+		// get phonetic properties
+		var pho = $this.attr("data-name").replace(/ /g, "_"); // name of the bird and mp3 file.
+		var key = $this.attr("data-key"); // associated keyboard touch.
+		$this.addClass("playing");
+		// playing
+		var sound = new Howl({
+			urls: ['./audio/'+pho+'.mp3'],
+			onend: function() { $this.removeClass("playing"); }
+		}).play();
+		console.log("♪: "+pho+".");// edited
 	}; // end
-
 
 	$(".bird-img").click(function(){ 
 		playSound( $(this) );
 	});	
-		
 }
+
 
 
 
