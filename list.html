@@ -21,6 +21,7 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/handlebars.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
     <script rel='script' src='js/howler.js'></script>
     <!--[if lt IE 9]>
         <script src="https://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
@@ -107,8 +108,7 @@
 </body>
 
 <!-- 3. Template -->
-<script id="tpl" type="text/template">
-  {{#item}}
+<script id="tpl"  type="text/x-handlebars-template">
 	<li class="{{ecosystem}}">
 		{{#if img}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/{{img}}')">
 			{{else}}<div class="bird-img" data-name="{{english}}" style="background-image:url('img/photo/nophoto.jpg')">
@@ -117,9 +117,9 @@
 		</div><!--bird-img-->
 		<div class="bird-info">
 			<p class="title">{{english}} <span>{{latin}}</span></p>
-			<p class="description">Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant. <a href="http://en.wikipedia.org/wiki/{{latin}}" class="see-more">( see more )</a></p>
+			<p class="description">{{#if description}}{{description}}{{else}}Os et maxima simus. Ut errum erum lam et haruptas dellore riberumet eliquodis expedio. Ut volessum si re idellant occus nus et pos dusaectiis nesedi tem ut eni isimagnatur? Ta volorempor ant.{{/if}} <a href="http://en.wikipedia.org/wiki/{{latin}}" class="see-more">( see more )</a></p>
 			<ol>
-				<li>Loves to hang around in parties or in pairs</li>
+				<li>{{#if special}}{{special}}{{else}}Loves to hang around in parties or in pairs{{/if}}</li>
 				<li class="iucn"><a href="#" class="{{iucn}}"></a></li>
 				<li class="ecosystem"><a href="#" class="{{ecosystem}}"></a></li>
 			</ol>
@@ -127,7 +127,6 @@
 		</div><!--bird-info-->
 		<div class="clearfix"></div>
 	</li>
-{{/item}}
 </script>
     <!-- 3. Template -->
     <script id="tpl-old" type="text/template">
@@ -148,19 +147,25 @@
 <!-- ###################### -->
 
 <!--4. Handlebars.js slingshot -->
-<script>
-	//4a.function creation
-	var slingshot = function (data, tplId, anchor) {
-		//$.getJSON(url, function(data) {
-		var template = $(tplId).html();
-		var stone = Handlebars.compile(template)(data);
-		$(anchor).append(stone);
-		// });
-	}
-	//4b.function firing
-	slingshot(jsonData, '#tpl', '#hook'); // since url = 'data.json' , we can use both notations. 
-</script>
 
+<script type="text/javascript">
+	//  var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0Arsc5NsNo7xedERucjY3aHdvMkdzdmV2aUE2d2dpN2c&output=html';
+	$(document).ready( function() {
+		Tabletop.init( { key: '0Arsc5NsNo7xedFFzc3ZQWUVZRkR0WmJub2pqLU1Cc1E',
+						callback: showInfo,
+						parseNumbers: true } );
+	});
+
+	function showInfo(data, tabletop) { // function showInfo(rows) { } important as well !
+		var source   = $("#tpl").html();
+		var template = Handlebars.compile(source);
+
+		$.each( tabletop.sheets("app1").all(), function(i, data2) {
+			var html = template(data2);
+			$("#hook").append(html);
+		});
+	}
+</script> 
 <!--5a. INTERACTIONS -->
 <script id="interactive_player">
 var playSound = function ($this) {
