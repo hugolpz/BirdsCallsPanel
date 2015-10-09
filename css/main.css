@@ -126,10 +126,20 @@ header ul li a:hover {
 	background-color:rgba(0,0,0,0.3);
 }
 
+.everything-but-footer, #main-content {
+	height: 100%;
+}
 #main-content {
 	width: 100%;
 	min-height: 334px;
 	margin-top:60px;
+	text-align: center;
+}
+.jumbotron {
+	height: 100%;
+	display: block;
+	position: relative;
+	top: 17%;
 }
 
 footer {display:none;}
@@ -137,10 +147,6 @@ footer {display:none;}
 
 
 /*Home Page*/
-
-body.home {
-	background:#A1D4A9 url('../img/logo.png') center center no-repeat;
-}
 
 .home footer {
 	height:74px;
