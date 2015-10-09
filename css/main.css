@@ -126,7 +126,7 @@ header ul li a:hover {
 	background-color:rgba(0,0,0,0.3);
 }
 
-#body {
+#main-content {
 	width: 100%;
 	min-height: 334px;
 	margin-top:60px;
@@ -306,7 +306,7 @@ li.iucn a, .iucn-status i {
 
 /*Credits Page*/
 
-.credits #body {
+.credits #main-content {
 	width:100%;
 	max-width:768px;
 	margin:0 auto;
@@ -357,7 +357,7 @@ ul.iucn-status li i {
 	header {
 		padding: 5px 0;
 	}
-	#body {
+	#main-content {
 		margin-top:50px;
 	}
 	.bird-img {
