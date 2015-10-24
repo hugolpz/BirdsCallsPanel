@@ -1,5 +1,5 @@
 ## BirdcallsOfIndia / Web app.
-The **Birdcalls Of India** web application introduce you all birds recorded within the [Pakke National Park](https://en.wikipedia.org/wiki/Pakke_Tiger_Reserve), India. You can check out the appareance, a short description as well as listen at high quality calls of +40 wild life treasures observed in the Pakke park.
+The **Birdcalls Of India web application** introduce you all birds recorded within the [Pakke National Park](https://en.wikipedia.org/wiki/Pakke_Tiger_Reserve), India. You can check out the appareance, a short description as well as listen at high quality calls of +40 wild life treasures observed in the Pakke park.
 
 ![IBMA](https://raw.githubusercontent.com/hugolpz/BirdsCallsPanel/master/bird_app.png)
 
